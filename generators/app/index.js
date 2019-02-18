@@ -12,7 +12,7 @@ module.exports = class extends Generator {
 
   // Async Await
   async prompting() {
-    const answers = await this.prompt([{
+    this.answers = await this.prompt([{
       type: 'input',
       name: 'name',
       message: 'Your project name',
@@ -25,11 +25,50 @@ module.exports = class extends Generator {
       message: 'Would you like to use Cool Feature',
     }]);
 
-    this.log('app name', answers.name);
-    this.log('cool feature', answers.cool);
+    // this.log('app name', this.answers.name);
+  }
+
+  install() {
+    this.npmInstall();
   }
 
   writing() {
-    this.log('cool feature', this.answers.cool);
+    this._writingSRCFiles();
+  }
+
+  _writingSRCFiles() {
+    this._writingIndexJS();
+    this._writingAppComponent();
+    this._writingIndexHTML();
+    this._writingGitignore();
+    this._writingPackageJSON();
+    this._writingReadme();
+  }
+
+  _writingIndexJS() {
+    this.fs.copy(this.templatePath('src/index.js'), this.destinationPath('src/index.js'));
+  }
+
+  _writingAppComponent() {
+    this.fs.copy(this.templatePath(
+      'src/components/App.js'),
+       this.destinationPath('src/components/App.js')
+    );
+  }
+
+  _writingIndexHTML() {
+    this.fs.copy(this.templatePath('public/index.html'), this.destinationPath('public/index.html'));
+  }
+
+  _writingGitignore() {
+    this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
+  }
+
+  _writingPackageJSON() {
+    this.fs.copy(this.templatePath('package.json'), this.destinationPath('package.json'));
+  }
+
+  _writingReadme() {
+    this.fs.copy(this.templatePath('README.md'), this.destinationPath('README.md'));
   }
 };
