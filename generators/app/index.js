@@ -2,6 +2,12 @@ var Generator = require('yeoman-generator');
 var chalk = require('chalk');
 
 module.exports = class extends Generator {
+
+  constructor(args, opts) {
+    super(args, opts);
+
+    this.argument('appname', { type: String, required: true });
+  }
   method1() {
     this.log('method 1 just ran');
   }
@@ -21,8 +27,8 @@ module.exports = class extends Generator {
     },
     {
       type: 'confirm',
-      name: 'cool',
-      message: 'Would you like to use Cool Feature',
+      name: 'reactRedux',
+      message: 'Would you like to use Redux lib?',
     }]);
 
     // this.log('app name', this.answers.name);
