@@ -5,6 +5,8 @@ module.exports = class extends Generator {
 
   constructor(args, opts) {
     super(args, opts);
+    this.log('ENTER')
+
 
     this.argument('appname', { type: String, required: true });
   }
@@ -18,6 +20,7 @@ module.exports = class extends Generator {
 
   // Async Await
   async prompting() {
+    this.log('ENTER2', this.options.appname)
     this.answers = await this.prompt([{
       type: 'input',
       name: 'name',
@@ -41,6 +44,7 @@ module.exports = class extends Generator {
   writing() {
     this._writingSRCFiles();
   }
+  
 
   _writingSRCFiles() {
     this._writingIndexJS();
