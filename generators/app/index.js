@@ -42,9 +42,16 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this._writingSRCFiles();
+    // this._writingSRCFiles();
+    this._writingReactTemplate();
   }
   
+  _writingReactTemplate() {
+    this.fs.copy(
+      this.templatePath('frontend'),
+      this.destinationPath('frontend')
+    )
+  }
 
   _writingSRCFiles() {
     this._writingIndexJS();
