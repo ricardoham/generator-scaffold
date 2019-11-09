@@ -53,39 +53,4 @@ module.exports = class extends Generator {
     )
   }
 
-  _writingSRCFiles() {
-    this._writingIndexJS();
-    this._writingAppComponent();
-    this._writingIndexHTML();
-    this._writingGitignore();
-    this._writingPackageJSON();
-    this._writingReadme();
-  }
-
-  _writingIndexJS() {
-    this.fs.copy(this.templatePath('src/index.js'), this.destinationPath('src/index.js'));
-  }
-
-  _writingAppComponent() {
-    this.fs.copy(this.templatePath(
-      'src/components/App.js'),
-       this.destinationPath('src/components/App.js')
-    );
-  }
-
-  _writingIndexHTML() {
-    this.fs.copy(this.templatePath('public/index.html'), this.destinationPath('public/index.html'));
-  }
-
-  _writingGitignore() {
-    this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
-  }
-
-  _writingPackageJSON() {
-    this.fs.copy(this.templatePath('package.json'), this.destinationPath('package.json'));
-  }
-
-  _writingReadme() {
-    this.fs.copy(this.templatePath('README.md'), this.destinationPath('README.md'));
-  }
 };
