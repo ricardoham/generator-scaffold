@@ -29,12 +29,16 @@ module.exports = class extends Generator {
       store: true,
     },
     {
-      type: 'confirm',
-      name: 'reactRedux',
-      message: 'Would you like to use Redux lib?',
+      type: 'list',
+      name: 'templateType',
+      message: 'Select the template wanted:',
+      choices: ['Front-End React', 'Node API builder', 'FullStack Application']
     }]);
 
     // this.log('app name', this.answers.name);
+    this.log('CHOCE', this.answers.templateType)
+
+
   }
 
   install() {
@@ -42,8 +46,15 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    // this._writingSRCFiles();
-    this._writingReactTemplate();
+    if (this.answers.templateType === 'Front-End React') {
+      this._writingReactTemplate();
+    } else if (this.answers.templateType === 'Node API builder') {
+      this._writingApiTemplate()
+    }
+    else {
+      this._writingReactTemplate()
+      this._writingApiTemplate()
+    }
   }
   
   _writingReactTemplate() {
@@ -58,6 +69,10 @@ module.exports = class extends Generator {
       this.templatePath('api'),
       this.destinationPath('api')
     )
+  }
+
+  end() {
+    this.log('Jobs is Done!')
   }
 
 };
