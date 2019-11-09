@@ -5,17 +5,7 @@ module.exports = class extends Generator {
 
   constructor(args, opts) {
     super(args, opts);
-    this.log('ENTER')
-
-
     this.argument('appname', { type: String, required: true });
-  }
-  method1() {
-    this.log('method 1 just ran');
-  }
-
-  method2() {
-    this.log('method 2 just ran');
   }
 
   // Async Await
@@ -34,11 +24,6 @@ module.exports = class extends Generator {
       message: 'Select the template wanted:',
       choices: ['Front-End React', 'Node API builder', 'FullStack Application']
     }]);
-
-    // this.log('app name', this.answers.name);
-    this.log('CHOCE', this.answers.templateType)
-
-
   }
 
   install() {
