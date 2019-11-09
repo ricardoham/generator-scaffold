@@ -53,4 +53,11 @@ module.exports = class extends Generator {
     )
   }
 
+  _writingApiTemplate() {
+    this.fs.copy(
+      this.templatePath('api'),
+      this.destinationPath('api')
+    )
+  }
+
 };
