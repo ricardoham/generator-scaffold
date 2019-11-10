@@ -28,11 +28,13 @@ module.exports = class extends Generator {
   install() {
     this.npmInstall();
   }
+
   initializing() {
     if (this.options.appname === 'ohmy') {
       this._writingEasterEgg()
     }
   }
+
   writing() {
     if (this.answers.templateType === 'Front-End React') {
       this._writingReactTemplate();
