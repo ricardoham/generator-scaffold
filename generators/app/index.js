@@ -10,7 +10,6 @@ module.exports = class extends Generator {
 
   // Async Await
   async prompting() {
-    this.log('ENTER2', this.options.appname)
     this.answers = await this.prompt([{
       type: 'input',
       name: 'name',
@@ -47,6 +46,12 @@ module.exports = class extends Generator {
       this.templatePath('frontend'),
       this.destinationPath('frontend')
     )
+    this.fs.copyTpl(
+      this.templatePath('frontend/public/index.html'),
+      this.destinationPath('frontend/public/index.html'),
+      { title: 'Template Test' } // Embedded JavaScript templating.
+      
+    )
   }
 
   _writingApiTemplate() {
@@ -57,7 +62,11 @@ module.exports = class extends Generator {
   }
 
   end() {
-    this.log('Jobs is Done!')
+    this.log(chalk.green('------------'))
+    this.log(chalk.magenta('***---***'))
+    this.log(chalk.blue('Jobs is Done!'))
+    this.log(chalk.green('------------'))
+    this.log(chalk.magenta('***---***'))
   }
 
 };
