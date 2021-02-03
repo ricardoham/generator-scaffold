@@ -12,3 +12,6 @@ yo scaffold
 ### This demo is part of my Medium article!
 You can see the tutorial following this link below:
 https://rdomanoel.medium.com/creating-scaffolds-and-generators-using-yeoman-14dcb0c432f8
+
+or if you prefer DevTo:
+https://dev.to/ricardoham/creating-scaffolds-and-generators-using-yeoman-1g1m
