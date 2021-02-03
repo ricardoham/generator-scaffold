@@ -1,4 +1,5 @@
 # Scaffold Example Creating
+[![GitHub license](https://img.shields.io/github/license/ricardoham/generator-scaffold)](https://github.com/ricardoham/generator-scaffold/blob/master/LICENSE)
 
 Your can run this demo following the steps bellow:
 

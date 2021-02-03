@@ -1,7 +1,7 @@
 {
   "name": "generator-scaffold",
   "version": "0.1.0",
-  "description": "",
+  "description": "scaffold example project",
   "files": [
     "generators"
   ],
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ricardoham/test-cli"
+    "url": "git+https://github.com/ricardoham/generator-scaffold"
   },
   "dependencies": {
     "chalk": "^2.4.2",

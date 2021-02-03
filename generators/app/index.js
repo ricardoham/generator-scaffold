@@ -20,7 +20,7 @@ module.exports = class extends Generator {
     {
       type: 'list',
       name: 'templateType',
-      message: 'Select the template wanted:',
+      message: 'Select the template you want:',
       choices: ['Front-End React', 'Node API builder', 'FullStack Application']
     }]);
   }
@@ -46,7 +46,7 @@ module.exports = class extends Generator {
       this._writingApiTemplate()
     }
   }
-  
+
   _writingReactTemplate() {
     this.fs.copy(
       this.templatePath('frontend'),
@@ -55,8 +55,7 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('frontend/public/index.html'),
       this.destinationPath('frontend/public/index.html'),
-      { title: this.appname } // Embedded JavaScript templating.
-      
+      { title: this.answers.name } // Embedded JavaScript templating.
     )
   }
 
