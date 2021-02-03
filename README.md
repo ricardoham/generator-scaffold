@@ -10,3 +10,5 @@ navigate to directory you want to run the generator
 yo scaffold
 ```
 ### This demo is part of my Medium article!
+You can see the tutorial following this link below:
+https://rdomanoel.medium.com/creating-scaffolds-and-generators-using-yeoman-14dcb0c432f8
